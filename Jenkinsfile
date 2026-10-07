@@ -14,7 +14,7 @@ pipeline {
             steps {
                 dir('ci-cd-with-jenkins-app') {
                     withSonarQubeEnv('SonarQube') {
-                        sh 'mvn sonar:sonar -Dsonar.projectKey=ci-cd-with-jenkins'
+                        sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ci-cd-with-jenkins'
                     }
                 }
             }
