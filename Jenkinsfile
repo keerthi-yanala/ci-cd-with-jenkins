@@ -19,5 +19,11 @@ pipeline {
                 }
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t ci-cd-with-jenkins-app:1.0 .'
+            }
+        }
     }
 }
